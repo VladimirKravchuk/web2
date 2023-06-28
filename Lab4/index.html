@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LR 4</title>
+    <link href="css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table>
+    <thead>
+    <th>Завдання</th>
+    <th> </th>
+    <th>Результат</th>
+    </thead>
+    <tbody>
+    <tr>
+    <th>Завдання №1. Виведення поточної дати та часу.</th>
+    <td><button onclick="currentDate()">Викoнати</button></td>
+    <td id="current_date"></td>
+    </tr>
+    <tr>
+        <th>Завдання №2. Виведення дня тижня.</th>
+        <td><button id="task2"  >Викoнати</button></td>
+        <td id="day"></td>
+    </tr>
+    <tr>
+        <th>Завдання №3. Виведення дати N-днів назад.
+            Введіть кількість днів<input type="text" id="daysAgo" />
+        </th>
+        <td><button id="days_ago" onclick="daysAgo()">Викoнати</button></td>
+        <td id="agoResult"></td>
+    </tr>
+    <tr>
+        <th>Завдання №4.Виведення останнього дня місяця.
+            Введіть місяць<input id="enterMonth"></td></th>
+        <td><button onclick="lastDay()">Викoнати</button>
+
+        <td id="lastDay"></td>
+    </tr>
+    <tr>
+        <th>Завданяя №5.</th>
+
+        <td><button onclick="Seconds()">Викoнати</button></td>
+        <td id="secondsAttAll"></td>
+    </tr>
+    <tr>
+        <th>Завдання №6
+            Введіть дату<input id="date"></th>
+        <td><button onclick="task6()" >Викoнати</button></td>
+        <td id="res6"></td>
+    </tr>
+    <tr>
+        <th>Завдання №7
+            Введіть початкову дату<input id="startYear">
+            Та кінечну<input id="endYear"></th>
+        <td><button onclick="fullYear()">Викoнати</button>
+        <td id="year"></td>
+    </tr>
+    </tbody>
+    <script src="lab4lib.js"></script>
+    <script src="function.js"></script>
+</table>
+</body>
+</html>

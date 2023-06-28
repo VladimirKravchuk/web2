@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+    <tr><th>Січень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Лютий</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Березень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Квітень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Травень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Червень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Липень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Серпень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Вересень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Жовтень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Листопад</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Грудень</th><td><input type="text" name="month"></td></tr>
+    <tr><th>Сума</th><td><span id="suma"> </span></td></tr>
+    <tr><th>Середнє</th><td><span id="average"> </span></td></tr>
+    <tr><th>Мінімальне</th><td><span id="min"> </span></td></tr>
+    <tr><th>Масимальне</th><td><span id="max"> </span></td></tr>
+
+    <div>
+        <button type="button" id="submit">Обрахувати</button>
+    </div>
+
+</table>
+<script>
+    let months = document.getElementsByName('month')
+    let button = document.getElementById('submit')
+
+
+    let res1 = document.getElementById('suma')
+    let res2 = document.getElementById('average')
+    let res3 = document.getElementById('min')
+    let res4 = document.getElementById('max')
+
+    button.addEventListener("click", function (){
+        let suma = 0, average = 0, min = +months[0].value, max = 0;
+        for (let i = 0; i<months.length; i++){
+            suma += +months[i].value;
+            average += +months[i].value;
+            if (+months[i].value < min  ) min = +months[i].value;
+            if (+months[i].value > max) max = +months[i].value;
+            console.log(+months[i].value + ' ' + min + max)
+            }
+
+
+
+        res1.innerText += suma;
+        res2.innerText += average / months.length ;
+        res3.innerText += min;
+        res4.innerText += max;
+
+    })
+</script>
+</body>
+</html>

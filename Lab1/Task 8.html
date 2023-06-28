@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8</title>
+</head>
+<script>
+    let str= prompt("введіть рядок", "")
+    function extractCurrencyValue(str) {
+        console.log(str)
+
+        if (str[0]=='$' ) {
+            return +str.slice(1)
+        }
+        return str;
+    }
+    alert(extractCurrencyValue(str))
+</script>
+<body>
+</body>
+</html>

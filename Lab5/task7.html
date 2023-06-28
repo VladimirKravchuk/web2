@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="board">
+    <button id="btn" class="btn">press</button>
+</div>
+
+<script>
+    const random = (min, max) => {
+        const rand = min + Math.random() * (max - min + 1);
+        return Math.floor(rand);
+    }
+
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('mouseenter', () => {
+        btn.style.left = `${random(0, 90)}%`;
+        btn.style.top = `${random(0, 90)}%`;
+    });
+
+
+    btn.addEventListener('click', () => {
+        alert('Congrats! You hit the button!');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+table{
+    border: 1px solid lightslategrey;
+}
+table td{
+    width: 25px;
+    padding: 7px;
+    margin: 5px;
+}
+button{
+    margin-top: 5px;
+    background-color: darkseagreen;
+}

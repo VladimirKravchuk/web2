@@ -1,0 +1,10 @@
+.click {
+background-color: darkseagreen;
+}
+.clicked{
+    background-color: tomato;
+}
+table{
+    width: 250px;
+    height: 250px;
+}

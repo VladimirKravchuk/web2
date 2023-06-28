@@ -1,0 +1,36 @@
+.crudUnit {
+    margin: 10px;
+    background-color: #b6dede;
+    border: 1px solid #292929;
+    display: grid;
+    grid-template-columns: repeat(2, 30px) 1fr;
+}
+.crudUnit > button {
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 5px;
+    border: 1px solid white;
+}
+
+.crudUnitText {
+    grid-column: 1 / 4;
+    margin: 5px 10px 10px;
+    resize: none;
+    outline: none;
+}
+
+.deleteButton {
+    background-image: url('../images/trashBin.png');
+}
+
+.editButton {
+    background-image: url('../images/editPencil.jpg');
+    transform: scaleX(-1);
+}
+
+.crudUnit > textarea:focus {
+    border: 3px solid orange;
+    background-color: #d8eeee;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task01</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div>
+    <input type="text" value="0" id="number1">
+</div>
+<div>
+    <input type="text" value="0" id="number2">
+</div>
+
+<button id="buttonCalculate">ADD</button>
+<div id="result">0</div>
+
+<script>
+    var number1 = document.getElementById("number1")
+    var number2 = document.getElementById("number2")
+    var buttonCalculate = document.getElementById("buttonCalculate")
+    var result = document.getElementById("result")
+
+    buttonCalculate.addEventListener("click", function () {
+        var c = +number1.value + +number2.value;
+        result.innerHTML = c;
+    })
+</script>
+</body>
+</html>

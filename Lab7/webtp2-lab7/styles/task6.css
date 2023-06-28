@@ -1,0 +1,35 @@
+:root {
+    --primary-color: orange;
+    --primary-color-border: #ff4800;
+    --secondary-color: indigo;
+    --secondary-color-border: #290048;
+}
+
+button, input {
+    border: 3px solid var(--primary-color);
+    background-color: white;
+    color: var(--secondary-color);
+    font-size: 15px;
+    text-align: center;
+    margin: 5px;
+}
+
+#bulbContainer {
+    width: auto;
+}
+
+#bulbContainer td {
+    border-radius: 50%;
+    min-width: 20px;
+    height: 20px;
+}
+
+.active {
+    border: 3px solid var(--primary-color-border);
+    background-color: var(--primary-color);
+}
+
+.inactive {
+    border: 3px solid var(--secondary-color-border);
+    background-color: var(--secondary-color);
+}

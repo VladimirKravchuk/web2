@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label id="atAll"></label>
+<span id="task"></span><br />
+
+<input type="button" value="Перевірити" id="pr"><br />
+<input type="button"  value="Слідуючий приклад" id="next"><br />
+
+<div id="result"></div>
+<div id="error"></div>
+
+<input type="radio" name="answer"  >
+    <label  ></label><br/>
+<input type="radio" name="answer" >
+    <label  ></label><br/>
+<input type="radio" name="answer" >
+    <label  ></label><br/>
+<input type="radio" name="answer" >
+    <label  ></label><br/>
+</body>
+<script>
+    let task = document.getElementById('task')
+    let radio = document.getElementsByName('answer');
+    let pr = document.getElementById('pr')
+    let res = document.getElementById('result')
+    let next = document.getElementById('next')
+    let error = document.getElementById('error')
+
+    let atAll = 0;
+    let correctAnswer = 0;
+    let a=0,b=0,c=0;
+
+    res.innerText += ' ' + 'Всього правильеих відповіей'
+    a = getRandomInt(1, 10);
+    b = getRandomInt(1, 10);
+    c = +(a * b);
+    task.innerHTML = a + ' * ' + b;
+    for (let i = 0; i < radio.length; i++) {
+        radio[i].nextElementSibling.innerHTML = `${Math.floor((Math.random()*(90 + 1)))}`
+        radio[Math.floor(Math.random()*(3+1))].nextElementSibling.innerHTML = c.toString()
+    }
+    function getRandomInt(min, max){
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
+    next.addEventListener("click", function (){
+        atAll++;
+        error.innerText = ''
+        a = getRandomInt(1, 10);
+        b = getRandomInt(1, 10);
+        c = +(a * b);
+        let rand = Math.floor(Math.random()*(3+1));
+        task.innerHTML = a + ' * ' + b;
+        for (let i = 0; i < radio.length; i++) {
+            if(radio[i].checked){
+                radio[i].checked = false
+            }
+            radio[i].nextElementSibling.innerHTML = `${Math.floor((Math.random()*(90 + 1)))}`
+
+        }
+
+        radio[rand].nextElementSibling.innerHTML = c.toString()
+        if (atAll >= 10) next.disabled = true;
+    })
+
+    pr.addEventListener("click", function (){
+
+        for (let i = 0; i < radio.length; i++){
+            if (radio[i].checked && radio[i].nextElementSibling.textContent === c.toString()){
+                correctAnswer++
+            }
+            if(radio[i].checked && radio[i].nextElementSibling.textContent !== c.toString()){
+                error.innerText = ' ' +'Помилка, правильна відповідь' + ' '+ c.toString()
+                res.style.color = 'red';
+            }
+        }
+        res.innerText = ' ' + 'Всього правильеих відповіей'+' ' + correctAnswer + 'з 10'
+        res.style.color = 'green';
+
+    })
+</script>
+
+</html>

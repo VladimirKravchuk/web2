@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" value="uk" name="res">Ukraine<br>
+<input type="checkbox" value="en" name="res">English<br>
+<input type="checkbox" value="sp" name="res">Spanish<br>
+<label id="output"></label><br>
+<input type="button" id="ok" onclick="Ok()" value="Ok">
+</body>
+<script>
+    let res2 = document.getElementsByName('res')
+    let out = document.getElementById('output')
+    let ok = document.getElementById('ok')
+    ok.addEventListener("click", function (){
+        out.innerText = null
+        for (let i = 0; i < res2.length; i++){
+
+            if (res2[i].checked){
+                out.innerText += ' ' + res2[i].value
+            }
+        }
+    })
+</script>
+</html>

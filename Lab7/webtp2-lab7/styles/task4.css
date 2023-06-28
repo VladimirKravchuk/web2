@@ -1,0 +1,22 @@
+h1 {
+    color: red;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    background-color: #e3f1fa;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px dotted black;
+    padding: 3px;
+}
+
+#rootDiv {
+    margin: 20px;
+}

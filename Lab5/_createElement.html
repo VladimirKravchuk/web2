@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="classes.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+</body>
+<input type="button" onclick="tableCreate()"  value="Generate" style="width: 100px; height: 30px; background: darkgray">
+<script>
+    function tableCreate(){
+        let body = document.getElementsByTagName("body")[0];
+
+
+        let tbl = document.createElement("table");
+        let tblBody = document.createElement("tbody");
+
+        for (let j = 0; j <= 9; j++) {
+            let row = document.createElement("tr");
+
+            for (let i = 0; i < 9; i++) {
+
+                let cell = document.createElement("td");
+                cell.setAttribute('class','click')
+                cell.setAttribute('name', 'seat')
+                row.appendChild(cell);
+            }
+
+
+            tblBody.appendChild(row);
+        }
+
+
+        tbl.appendChild(tblBody);
+        body.appendChild(tbl);
+
+
+        tbl.setAttribute("border", "1");
+
+        let seats = document.getElementsByName('seat')
+
+        let clicked = false;
+        for(let i = 0; i < seats.length; i++){
+            seats[i].addEventListener("click", function (){
+                seats[i].classList.toggle('clicked')
+               if (seats[i].className === 'clicked') {
+                   seats[i].classList.toggle('click')
+               }
+
+            })
+
+        }
+    }
+</script>
+</html>

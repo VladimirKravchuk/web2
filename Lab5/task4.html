@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" onclick="fun()" name="email"><label>xoinnitroipragreu-5712@yopmail.com</label><br>
+<input type="checkbox" onclick="fun()" name="email"><label>croizoivallabrau-8612@yopmail.com</label><br>
+<input type="checkbox" onclick="fun()" name="email"><label>faquezitteuddu-6760@yopmail.com</label><br>
+<input type="checkbox" onclick="fun()" name="email"><label>sunnoitteippittu-4292@yopmail.com</label><br>
+<input type="checkbox" onclick="fun()" name="email"><label>xaufoutrufoda-1128@yopmail.com</label><br>
+<input type="checkbox" onclick="fun()" name="email"><label>zequagrubabru-6374@yopmail.com</label><br>
+<div id="result" style=" padding: 10px; border: 4px double black;margin: 10px"></div>
+</body>
+<script>
+    let emails = document.getElementsByName('email')
+    let res = document.getElementById('result')
+    function fun(){
+        res.innerText = null
+        for(let i = 0; i< emails.length; i++){
+            if(emails[i].checked) res.innerText += ' ' + emails[i].nextElementSibling.textContent
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+:root {
+    --primary-color: orange;
+    --secondary-color: indigo;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 120px 400px;
+    grid-gap: 20px;
+}
+
+#canvas {
+    border: 1px solid black;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    background-color: var(--secondary-color);
+    height: 400px;
+    position: relative;
+}
+
+input, button {
+    border: 3px solid var(--primary-color);
+    background-color: white;
+    color: var(--secondary-color);
+    font-size: 15px;
+    text-align: center;
+}
+
+#canvas > div {
+    border: 1px solid black;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+}
